@@ -1,17 +1,19 @@
 {
-  "name": "sequence-as-promise",
-  "version": "1.2.0",
+  "name": "sequence-as-promise-es5",
+  "version": "1.3.0",
   "description": "Executes array of functions and promises as sequence and returns promise",
-  "main": "index.js",
+  "main": "build/index.js",
   "directories": {
     "test": "test"
   },
+  "files": ["build"],
   "scripts": {
+    "build": "mkdir -p build && babel --presets es2015 src/index.js -o ./build/index.js",
     "test": "mocha test --timeout 15000"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JiLiZART/sequence-as-promise.git"
+    "url": "git+https://github.com/mitoyarzun/sequence-as-promise.git"
   },
   "keywords": [
     "promise",
@@ -20,13 +22,16 @@
     "functions",
     "delay"
   ],
-  "author": "Nikolay Kostyurin <jilizart@gmail.com>",
+  "author": "Jaime Oyarzun",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JiLiZART/sequence-as-promise/issues"
+    "url": "https://github.com/mitoyarzun/sequence-as-promise/issues"
   },
-  "homepage": "https://github.com/JiLiZART/sequence-as-promise#readme",
+  "homepage": "https://github.com/mitoyarzun/sequence-as-promise#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "mocha": "^3.1.0"

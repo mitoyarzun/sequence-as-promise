@@ -1,5 +1,7 @@
-[![Build Status](https://travis-ci.org/JiLiZART/sequence-as-promise.svg?branch=master)](https://travis-ci.org/JiLiZART/sequence-as-promise)
-[![Code Climate](https://codeclimate.com/github/JiLiZART/sequence-as-promise/badges/gpa.svg)](https://codeclimate.com/github/JiLiZART/sequence-as-promise)
+## About this fork
+
+This fork uses babel to transpile the code to ES5.
+
 ## Sequence as Promise
 It's zero dependency and lightweight function that allows execute array of functions and promises in sequence and returns Promise
 
