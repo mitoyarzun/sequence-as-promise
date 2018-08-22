@@ -16,7 +16,7 @@ promise1.then(() => promise2.then(() => promise3.then(callback))).then(done);
 
 equivalent to
 ```js
-const sequence = require('sequence-as-promise');
+const sequence = require('sequence-as-promise-es5');
 
 sequence([promise1, promise2, promise3, callback]).then(done);
 ```
@@ -25,12 +25,12 @@ sequence([promise1, promise2, promise3, callback]).then(done);
 
 with npm
 ```shell
-npm i --save sequence-as-promise
+npm i --save sequence-as-promise-es5
 ```
 
 with yarn
 ```shell
-yarn add sequence-as-promise
+yarn add sequence-as-promise-es5
 ```
 
 ## Basic usage
@@ -43,7 +43,7 @@ All functions in sequence accepts two arguments, `(prevResult, results) => {}`
 - `results` an array of results from previous functions or promises calls
 
 ```js
-const sequence = require('sequence-as-promise');
+const sequence = require('sequence-as-promise-es5');
 sequence([
     Promise.resolve({status: true}),
     (prevResult/*{status: true}*/, results) => {
@@ -63,7 +63,7 @@ sequence([
 Most standard use case is a fetch dependant data one by one
 
 ```js
-const sequence = require('sequence-as-promise');
+const sequence = require('sequence-as-promise-es5');
 sequence([
     fetchUser(32),
     (user) => {
@@ -88,7 +88,7 @@ sequence([
 Any function or promise in sequence can throw an error, so we need to handle it
 
 ```js
-const sequence = require('sequence-as-promise');
+const sequence = require('sequence-as-promise-es5');
 sequence([
     fetchUser(32),
     (user) => {
@@ -119,7 +119,7 @@ sequence([
 But, if we need to call all that functions with primitive values between them (why not?).
 
 ```js
-const sequence = require('sequence-as-promise');
+const sequence = require('sequence-as-promise-es5');
 sequence([
     () => {
         return {moveCircleToMiddle: true};
